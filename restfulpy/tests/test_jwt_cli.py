@@ -6,10 +6,10 @@ from itsdangerous import TimedJSONWebSignatureSerializer
 from itsdangerous.exc import SignatureExpired
 from nanohttp import settings
 
-from restfulpy import Application as RestfulPyApplication
+from restfulpy import Application as RestfulpyApplication
 
 
-foo = RestfulPyApplication(name='jwt')
+foo = RestfulpyApplication(name='jwt')
 foo.__configuration__ = ''
 
 
@@ -39,7 +39,7 @@ def test_jwt():
         token = f'{stdout}'[:-1]
         assert pirincipal.loads(token) == payload
 
-        # Create a expire token
+        # Create a expired token
         when(given + '-e -1')
         assert stderr == ''
         token = f'{stdout}'[:-1]
