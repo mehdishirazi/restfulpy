@@ -46,3 +46,7 @@ def test_jwt():
         with pytest.raises(SignatureExpired):
             pirincipal.loads(token)
 
+
+if __name__ == '__main__':
+    foo.cli_main(['jwt', 'create'])
+
