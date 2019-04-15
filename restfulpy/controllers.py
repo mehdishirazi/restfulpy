@@ -9,7 +9,6 @@ from restfulpy.orm import DBSession
 class RootController(Controller):
 
     def __call__(self, *remaining_paths):
-
         if context.method == 'options':
             context.response_encoding = 'utf-8'
             context.response_headers.add_header(
