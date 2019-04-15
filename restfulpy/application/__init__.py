@@ -21,12 +21,15 @@ class Application(NanohttpApplication):
     and overriding some methods if desirable
 
     """
-
     __configuration__ = None
     __logger__ = get_logger()
     __authenticator__ = None
     __configuration_cipher__ = None
     engine = None
+
+
+
+
 
     def __init__(self, name: str, root: Controller = None, root_path='.',
                  version='0.1.0-dev.0', process_name=None, authenticator=None,
