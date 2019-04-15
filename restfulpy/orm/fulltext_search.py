@@ -1,6 +1,5 @@
 from sqlalchemy.sql import func
 
-
 escaping_map = str.maketrans({
     '&': r'\&',
     '%': r'\%',
@@ -17,6 +16,10 @@ escaping_map = str.maketrans({
     '\\': r'\\',
     '\'': '\'\''
 })
+
+
+
+
 
 
 def fts_escape(expression):
