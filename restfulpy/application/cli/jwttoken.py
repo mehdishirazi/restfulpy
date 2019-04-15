@@ -2,8 +2,6 @@ import ujson
 from easycli import SubCommand, Argument
 
 from restfulpy.principal import JwtPrincipal
-
-
 class CreateJWTTokenSubSubCommand(SubCommand):
     __command__ = 'create'
     __help__ = 'Create a new initial jwt'
