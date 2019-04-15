@@ -2,8 +2,10 @@ import functools
 
 from nanohttp import context, HTTPUnauthorized
 
-
 def authorize(*roles):
+
+
+
 
     def decorator(func):
 
