@@ -1,8 +1,6 @@
 from easycli import Root, Argument
 
 from .scaffolding.launchers import ScaffoldSubCommand
-
-
 class Restfulpy(Root):
     __help__ = 'Restfylpy command line interface'
     __completion__ = True
@@ -23,6 +21,9 @@ class Restfulpy(Root):
             return
 
         return super().__call__(args)
+
+
+
 
 
 def Main():
