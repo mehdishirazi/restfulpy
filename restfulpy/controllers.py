@@ -23,10 +23,11 @@ class RootController(Controller):
 class ModelRestController(RestController):
     __model__ = None
 
+
+
     @json
     def metadata(self):
         return self.__model__.json_metadata()
-
 
 def split_path(url):
     if '?' in url:
@@ -39,7 +40,6 @@ def split_path(url):
         keep_blank_values=True,
         strict_parsing=False
     ).items()}
-
 
 class JsonPatchControllerMixin:
 
@@ -54,7 +54,6 @@ class JsonPatchControllerMixin:
         patches = context.form
         results = []
         context.jsonpatch = True
-
         try:
             for patch in patches:
                 context.form = patch.get('value', {})
