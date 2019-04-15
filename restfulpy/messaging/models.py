@@ -44,7 +44,6 @@ class Email(RestfulpyTask):
             '_body',
             descriptor=property(cls._get_body, cls._set_body)
         )
-
     @declared_attr
     def id(cls):
         return Field(
@@ -67,4 +66,3 @@ class Email(RestfulpyTask):
         )
 
         logger.info('%s is sent to %s', self.subject, self.to)
-

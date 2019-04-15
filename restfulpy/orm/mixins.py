@@ -6,9 +6,7 @@ from sqlalchemy import DateTime, between, desc
 from sqlalchemy.events import event
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.sql.expression import nullslast, nullsfirst
-
 from .field import Field
-
 
 FILTERING_IN_OPERATOR_REGEX = re.compile(r'!?IN\((?P<items>.*)\)')
 FILTERING_BETWEEN_OPERATOR_REGEX = \
@@ -24,6 +22,9 @@ class TimestampMixin:
         default=datetime.utcnow,
         label='Created At'
     )
+
+
+
 
 
 class ModifiedMixin(TimestampMixin):
