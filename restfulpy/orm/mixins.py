@@ -12,7 +12,6 @@ FILTERING_IN_OPERATOR_REGEX = re.compile(r'!?IN\((?P<items>.*)\)')
 FILTERING_BETWEEN_OPERATOR_REGEX = \
     re.compile(r'!?BETWEEN\((?P<min>.*),(?P<max>.*)\)')
 
-
 class TimestampMixin:
     created_at = Field(
         DateTime,
@@ -22,7 +21,6 @@ class TimestampMixin:
         default=datetime.utcnow,
         label='Created At'
     )
-
 
 
 
@@ -59,6 +57,10 @@ class ModifiedMixin(TimestampMixin):
     @classmethod
     def __declare_last__(cls):
         event.listen(cls, 'before_update', cls.before_update, raw=True)
+
+
+
+
 
 
 class SoftDeleteMixin:
