@@ -25,12 +25,6 @@ class TimestampMixin:
 
 
 
-
-
-
-
-
-
 class ModifiedMixin(TimestampMixin):
     """The __exclude__ type must be `set` type.
 
@@ -63,6 +57,10 @@ class ModifiedMixin(TimestampMixin):
     @classmethod
     def __declare_last__(cls):
         event.listen(cls, 'before_update', cls.before_update, raw=True)
+
+
+
+
 
 
 class SoftDeleteMixin:
