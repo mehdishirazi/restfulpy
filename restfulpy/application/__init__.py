@@ -27,10 +27,6 @@ class Application(NanohttpApplication):
     __configuration_cipher__ = None
     engine = None
 
-
-
-
-
     def __init__(self, name: str, root: Controller = None, root_path='.',
                  version='0.1.0-dev.0', process_name=None, authenticator=None,
                  configuration=None):
@@ -40,6 +36,8 @@ class Application(NanohttpApplication):
         self.root_path = abspath(root_path)
         self.name = name
         self.cli_main = EntryPoint(self).main
+
+
 
         if configuration:
             self.__configuration__ = configuration
