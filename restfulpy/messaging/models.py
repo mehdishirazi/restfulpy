@@ -7,12 +7,12 @@ from ..orm import Field, FakeJson,synonym
 from ..taskqueue import RestfulpyTask
 from .providers import create_messenger
 
-
 logger = get_logger('messaging')
-
 
 class Email(RestfulpyTask):
     __tablename__ = 'email'
+
+
 
 
     template_filename = Field(Unicode(200), nullable=True)
