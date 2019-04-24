@@ -19,11 +19,8 @@ class RootController(Controller):
 
         return super().__call__(*remaining_paths)
 
-
 class ModelRestController(RestController):
     __model__ = None
-
-
 
     @json
     def metadata(self):
@@ -34,6 +31,8 @@ def split_path(url):
         path, query = url.split('?')
     else:
         path, query = url, ''
+
+
 
     return path, {k: v[0] if len(v) == 1 else v for k, v in parse_qs(
         query,
